@@ -16,30 +16,30 @@ const initdb = async () =>
   });
 
 // ADD content to the database
-export const putDb = async (content) => {
-  console.log("PUT to the database");
-  const db = await openDB("jate", 1);
-  const tx = db.transaction("jate", "readwrite");
+export const putDb = async (id, content) => {
+  console.log("PUT request to database");
+  const jateDb = await openDB("jate", 1);
+  const tx = jateDb.transaction("jate", "readwrite");
   const store = tx.objectStore("jate");
-  const request = store.put({ id: id, jate: content });
+  const request = store.put({ id: id, content: content });
   const result = await request;
   console.log("🚀 - data saved to the database", result);
 };
 
 // GET all content from the database
-export const getDb = async () => {
-  console.log("GET from the database");
+export const getDb = async (content) => {
+  console.log("GET request to database");
   // create connection to the database and version we want to use
-  const db = await openDB("jate", 1);
+  const jateDb = await openDB("jate", 1);
   // new transaction with specified database and data privileges
-  const tx = db.transaction("jate", "readonly");
+  const tx = jateDb.transaction("jate", "readwrite");
   // open desiered object store
   const store = tx.objectStore("jate");
   // use getAll method to get all data in the database
   const request = store.getAll();
   // get confirmation of the request
   const result = await request;
-  console.log("result.value", result);
+  console.log("🚀 - data saved to the database", result);
   return result;
 };
 
