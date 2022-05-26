@@ -37,9 +37,9 @@ module.exports = () => {
         inject: true,
         name: "Just Another Text Editor",
         short_name: "JATE",
-        description: "Take notes with Javascript syntax highlighting!",
-        background_color: "#21211e",
-        theme_color: "#352442",
+        description: "Take notes with Javascript!",
+        background_color: "#161617",
+        theme_color: "#161617",
         start_url: "/",
         publicPath: "/",
         icons: [
