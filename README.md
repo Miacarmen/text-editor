@@ -62,7 +62,7 @@ npm start
 
 ## Deployed Link
 
-See Live site [here](https://git.heroku.com/no-one-will-ever-use-this.git)
+See Live site [here](https://no-one-will-ever-use-this.herokuapp.com/)
 
 
 ## Credits
